@@ -32,7 +32,7 @@ div.container:hover div.ball {
 div.container div.ball {
     width: 100px;
     height: 100px;
-    background-color: blueviolet;
+    background-color: rgb(0, 128, 117);
 }
 
 div.ball {
@@ -44,9 +44,9 @@ div.ball {
 }
 
 div.ball:nth-child(2) {
-    animation-delay: 2s;
+    animation-delay: 3s;
     animation-name: bounce;
-    animation-duration: 2s;
+    animation-duration: 4s;
 }
 
 div.ball:nth-child(3) {
@@ -54,9 +54,9 @@ div.ball:nth-child(3) {
 }
 
 div.ball:nth-child(4) {
-    animation-delay: 3s;
+    animation-delay: 2.5s;
     animation-name: bounce;
-    animation-duration: 2s;
+    animation-duration: 3s;
 }
 
 div.ball:nth-child(5) {
@@ -64,9 +64,11 @@ div.ball:nth-child(5) {
 }
 
 @keyframes bounce {
-    0% {}
+    0% {
+        transform: rotate(90deg);
+    }
     25% {
-        transform: translateY(100px);
+        transform: translateY(500px);
     }
     50% {
         transform: translateY(0px);
@@ -74,7 +76,9 @@ div.ball:nth-child(5) {
     75% {
         transform: translateY(-100px);
     }
-    100% {}
+    100% {
+        /* transform: rotate(90deg); */
+    }
 }
 
 @keyframes stylish-rotate {
@@ -103,5 +107,80 @@ div.ball:nth-child(5) {
         transform: rotate(360deg);
         background-color: white;
         border-radius: 10px;
+    }
+}
+
+/*  */
+
+div.nxt-container{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 50vh;
+    background-color:darkred;
+}
+
+div.nxt-container div.ball-slide{
+    width: 100px;
+    height: 100px;
+    background-color: darkseagreen;
+    margin-top: 30px;
+}
+
+div.ball-slide{
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-name: slider;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+div.nxt-container div.ball-slide2{ 
+    width: 100px;
+    height: 100px; 
+    background-color: bisque;  
+    margin-top: 180px;
+}
+div.ball-slide2{
+    animation-duration: 4s;
+    animation-name: sliderrev;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slider {
+    0%{
+        transform: translateX(80vw);
+    }
+    25%{
+        /* transform: translateX(33vw); */
+    }
+    50%{
+        transform: rotate(120deg);
+    }
+    75%{
+        /* transform: translateX(90vw); */
+    }
+    100%{
+        transform: translateX(80vw);
+    }
+}
+
+@keyframes sliderrev {
+    0%{
+        /* transform: rotate(120deg); */
+        transform: translateX(80vw);
+    }
+    25%{
+        
+    }
+    50%{
+        transform: rotate(120deg);
+        /* transform: translateX(); */
+    }
+    75%{
+        /* transform: translateX(10vw); */
+    }
+    100%{
+        transform: translateX(80vw);
     }
 }
